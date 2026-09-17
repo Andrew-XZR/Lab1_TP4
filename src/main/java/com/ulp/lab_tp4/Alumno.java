@@ -43,7 +43,7 @@ public class Alumno {
         Materias.add(m);
     }
 
-    public int cattidadMaterias() {
+    public int cantidadMaterias() {
         return Materias.size();
     }
 }
