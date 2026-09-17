@@ -17,5 +17,10 @@ public class Colegio {
         brenda.agregarMateria(lab1);
         
         brenda.agregarMateria(lab1);
+        
+        System.out.println("Cantidad de materias Martin: "
+                + martin.cantidadMaterias());
+        System.out.println("Cantidad de materias Brenda: "
+                + brenda.cantidadMaterias());
     }
 }
