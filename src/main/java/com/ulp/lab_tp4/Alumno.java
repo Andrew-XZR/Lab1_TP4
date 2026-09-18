@@ -1,18 +1,19 @@
 package com.ulp.lab_tp4;
 
 import java.util.HashSet;
+import java.util.Objects;
 
 public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
-    HashSet<Materia> Materias;
+    HashSet<Materia> materias;
 
     public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.Materias = new HashSet<Materia>();
+        this.materias = new HashSet<>();
     }
 
     public int getLegajo() {
@@ -40,10 +41,28 @@ public class Alumno {
     }
 
     public void agregarMateria(Materia m) {
-        Materias.add(m);
+        materias.add(m);
     }
 
     public int cantidadMaterias() {
-        return Materias.size();
+        return materias.size();
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alumno alumno = (Alumno) o;
+        return legajo == alumno.legajo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(legajo);
+    }
+
+    @Override
+    public String toString() {
+        return apellido + " " + nombre;
     }
 }

@@ -4,6 +4,8 @@
  */
 package com.ulp.lab_tp4;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author NoxiePC
@@ -56,6 +58,7 @@ public class Formalumno extends javax.swing.JInternalFrame {
         jLabel4.setText("Nombre:");
 
         btnGuardarAlumno.setText("Guardar");
+        btnGuardarAlumno.addActionListener(this::btnGuardarAlumnoActionPerformed);
 
         btnNuevoAlumno.setText("Nuevo");
 
@@ -117,6 +120,16 @@ public class Formalumno extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAlumnoActionPerformed
+        int leg = Integer.parseInt(txtLegajoAlumno.getText());
+        String apellido = txtApellidoAlumno.getText();
+        String nombre = txtNombreAlumno.getText();
+        
+        Alumno a = new Alumno(leg, apellido, nombre);
+        VentanaPrincipal.listaAlumnos.add(a);
+        JOptionPane.showMessageDialog(this, "Alumno agregado correctamente");
+    }//GEN-LAST:event_btnGuardarAlumnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

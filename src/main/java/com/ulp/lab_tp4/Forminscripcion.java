@@ -4,6 +4,9 @@
  */
 package com.ulp.lab_tp4;
 
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author NoxiePC
@@ -15,6 +18,20 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
      */
     public Forminscripcion() {
         initComponents();
+        cargarDatos();
+    }
+    
+    private void cargarDatos(){
+        CBoxAlumno.removeAllItems();
+        CBoxMateria.removeAllItems();
+        
+        for (Materia m : VentanaPrincipal.listaMaterias){
+            CBoxMateria.addItem(m); 
+        }
+        
+        for (Alumno a : VentanaPrincipal.listaAlumnos){
+            CBoxAlumno.addItem(a);
+        }
     }
 
     /**
@@ -49,11 +66,8 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Elija un Alumno:");
 
-        CBoxMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        CBoxAlumno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         btnInscribir.setText("Inscribir");
+        btnInscribir.addActionListener(this::btnInscribirActionPerformed);
 
         btnSalirInscrip.setText("Salir");
 
@@ -102,10 +116,20 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
+        Materia materiaSelect = (Materia) CBoxMateria.getSelectedItem();
+        Alumno alumnoSelect = (Alumno) CBoxAlumno.getSelectedItem();
+        
+        if(alumnoSelect != null && materiaSelect != null){
+            alumnoSelect.agregarMateria(materiaSelect);
+            JOptionPane.showMessageDialog(this, "Alumno inscripto en la materia" + materiaSelect.getNombre() + "exitosamente");
+        }
+    }//GEN-LAST:event_btnInscribirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CBoxAlumno;
-    private javax.swing.JComboBox<String> CBoxMateria;
+    private javax.swing.JComboBox<Alumno> CBoxAlumno;
+    private javax.swing.JComboBox<Materia> CBoxMateria;
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnSalirInscrip;
     private javax.swing.JLabel jLabel1;

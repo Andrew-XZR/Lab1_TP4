@@ -4,6 +4,8 @@
  */
 package com.ulp.lab_tp4;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author NoxiePC
@@ -56,6 +58,7 @@ public class Formmaterias extends javax.swing.JInternalFrame {
         jLabel4.setText("Año al que pertenece:");
 
         btnGuardarMaterias.setText("Guardar");
+        btnGuardarMaterias.addActionListener(this::btnGuardarMateriasActionPerformed);
 
         btnNuevoMaterias.setText("Nuevo");
 
@@ -117,6 +120,16 @@ public class Formmaterias extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarMateriasActionPerformed
+        int codigo = Integer.parseInt(txtCodMateria.getText());
+        String nombre = txtNombreMateria.getText();
+        int anio = Integer.parseInt(txtAñoMateria.getText());
+        
+        Materia a = new Materia(codigo, nombre, anio);
+        VentanaPrincipal.listaMaterias.add(a);
+        JOptionPane.showMessageDialog(this, "Materia agregada correctamente");
+    }//GEN-LAST:event_btnGuardarMateriasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

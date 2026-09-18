@@ -42,7 +42,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         MenuRegistro = new javax.swing.JMenu();
         MenuInscribir = new javax.swing.JMenuItem();
         MenuSalir = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        btnSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,8 +89,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         MenuSalir.setText("Salir");
 
-        jMenuItem6.setText("Salir");
-        MenuSalir.add(jMenuItem6);
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(this::btnSalirActionPerformed);
+        MenuSalir.add(btnSalir);
 
         jMenuBar1.add(MenuSalir);
 
@@ -134,6 +135,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         escritorio.add(ventanaInscripcion);
     }//GEN-LAST:event_MenuInscribirActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,8 +174,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenuSalir;
     private javax.swing.JMenuItem MenuVistaAlumno;
     private javax.swing.JMenuItem MenuVistaMateria;
+    private javax.swing.JMenuItem btnSalir;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
 }
