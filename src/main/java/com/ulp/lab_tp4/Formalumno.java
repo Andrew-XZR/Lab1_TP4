@@ -18,7 +18,13 @@ public class Formalumno extends javax.swing.JInternalFrame {
     public Formalumno() {
         initComponents();
     }
-
+    private void limpiarformulario(){
+        txtLegajoAlumno.setText("");
+        txtApellidoAlumno.setText("");
+        txtNombreAlumno.setText("");
+        
+        txtLegajoAlumno.requestFocus();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,8 +67,10 @@ public class Formalumno extends javax.swing.JInternalFrame {
         btnGuardarAlumno.addActionListener(this::btnGuardarAlumnoActionPerformed);
 
         btnNuevoAlumno.setText("Nuevo");
+        btnNuevoAlumno.addActionListener(this::btnNuevoAlumnoActionPerformed);
 
         btnSalirAlumno.setText("Salir");
+        btnSalirAlumno.addActionListener(this::btnSalirAlumnoActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +127,8 @@ public class Formalumno extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+   
     private void btnGuardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAlumnoActionPerformed
         int leg = Integer.parseInt(txtLegajoAlumno.getText());
         String apellido = txtApellidoAlumno.getText();
@@ -128,7 +137,16 @@ public class Formalumno extends javax.swing.JInternalFrame {
         Alumno a = new Alumno(leg, apellido, nombre);
         VentanaPrincipal.listaAlumnos.add(a);
         JOptionPane.showMessageDialog(this, "Alumno agregado correctamente");
+        
     }//GEN-LAST:event_btnGuardarAlumnoActionPerformed
+
+    private void btnNuevoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoAlumnoActionPerformed
+       limpiarformulario();
+    }//GEN-LAST:event_btnNuevoAlumnoActionPerformed
+
+    private void btnSalirAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirAlumnoActionPerformed
+     this.dispose();
+    }//GEN-LAST:event_btnSalirAlumnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

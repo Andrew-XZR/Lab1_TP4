@@ -70,6 +70,7 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
         btnInscribir.addActionListener(this::btnInscribirActionPerformed);
 
         btnSalirInscrip.setText("Salir");
+        btnSalirInscrip.addActionListener(this::btnSalirInscripActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +126,10 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Alumno inscripto en la materia " + materiaSelect.getNombre() + " exitosamente");
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
+
+    private void btnSalirInscripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirInscripActionPerformed
+      this.dispose();
+    }//GEN-LAST:event_btnSalirInscripActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

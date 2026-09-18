@@ -18,6 +18,13 @@ public class Formmaterias extends javax.swing.JInternalFrame {
     public Formmaterias() {
         initComponents();
     }
+    private void limpiarformulario(){
+        txtCodMateria.setText("");
+        txtNombreMateria.setText("");
+        txtAñoMateria.setText("");
+        
+        txtCodMateria.requestFocus();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,8 +68,10 @@ public class Formmaterias extends javax.swing.JInternalFrame {
         btnGuardarMaterias.addActionListener(this::btnGuardarMateriasActionPerformed);
 
         btnNuevoMaterias.setText("Nuevo");
+        btnNuevoMaterias.addActionListener(this::btnNuevoMateriasActionPerformed);
 
         btnSalirMaterias.setText("Salir");
+        btnSalirMaterias.addActionListener(this::btnSalirMateriasActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +139,14 @@ public class Formmaterias extends javax.swing.JInternalFrame {
         VentanaPrincipal.listaMaterias.add(a);
         JOptionPane.showMessageDialog(this, "Materia agregada correctamente");
     }//GEN-LAST:event_btnGuardarMateriasActionPerformed
+
+    private void btnSalirMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirMateriasActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_btnSalirMateriasActionPerformed
+
+    private void btnNuevoMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoMateriasActionPerformed
+       limpiarformulario();
+    }//GEN-LAST:event_btnNuevoMateriasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
