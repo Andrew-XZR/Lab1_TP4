@@ -43,7 +43,7 @@ public class Formmaterias extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Materias");
+        setTitle("Alta de Materias");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Formulario de Materias");

@@ -55,7 +55,7 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Inscripcion");
+        setTitle("Formulario de Inscripción");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Formulario de Inscripción");
@@ -122,7 +122,7 @@ public class Forminscripcion extends javax.swing.JInternalFrame {
         
         if(alumnoSelect != null && materiaSelect != null){
             alumnoSelect.agregarMateria(materiaSelect);
-            JOptionPane.showMessageDialog(this, "Alumno inscripto en la materia" + materiaSelect.getNombre() + "exitosamente");
+            JOptionPane.showMessageDialog(this, "Alumno inscripto en la materia " + materiaSelect.getNombre() + " exitosamente");
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
 
