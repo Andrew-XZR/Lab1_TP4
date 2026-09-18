@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Ventana;
+package com.ulp.lab_tp4;
+
+import java.util.HashSet;
 
 /**
  *
@@ -12,11 +14,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
 
-    /**
-     * Creates new form VentanaPrincipal
-     */
+    public static HashSet<Alumno> listaAlumnos = new HashSet<>();
+    public static HashSet<Materia> listaMaterias = new HashSet<>();
+    
     public VentanaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,7 +31,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuAlumno = new javax.swing.JMenu();
         MenuAgregarAlumno = new javax.swing.JMenuItem();
@@ -43,20 +46,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 581, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 412, Short.MAX_VALUE)
         );
 
         MenuAlumno.setText("Alumno");
 
         MenuAgregarAlumno.setText("Agregar Alumno");
+        MenuAgregarAlumno.addActionListener(this::MenuAgregarAlumnoActionPerformed);
         MenuAlumno.add(MenuAgregarAlumno);
 
         MenuVistaAlumno.setText("Vista Alumnos");
@@ -67,6 +71,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         MenuMateria.setText("Materia");
 
         MenuAgregarMateria.setText("Agregar Materia");
+        MenuAgregarMateria.addActionListener(this::MenuAgregarMateriaActionPerformed);
         MenuMateria.add(MenuAgregarMateria);
 
         MenuVistaMateria.setText("Vista Materia");
@@ -77,6 +82,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         MenuRegistro.setText("Registro");
 
         MenuInscribir.setText("Inscribir");
+        MenuInscribir.addActionListener(this::MenuInscribirActionPerformed);
         MenuRegistro.add(MenuInscribir);
 
         jMenuBar1.add(MenuRegistro);
@@ -94,15 +100,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MenuAgregarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAgregarAlumnoActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        Formalumno ventanaAlumno = new Formalumno();
+        ventanaAlumno.setVisible(true);
+        escritorio.add(ventanaAlumno);
+    }//GEN-LAST:event_MenuAgregarAlumnoActionPerformed
+
+    private void MenuAgregarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAgregarMateriaActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        Formmaterias ventanaMaterias = new Formmaterias();
+        ventanaMaterias.setVisible(true);
+        escritorio.add(ventanaMaterias);
+    }//GEN-LAST:event_MenuAgregarMateriaActionPerformed
+
+    private void MenuInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuInscribirActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        Forminscripcion ventanaInscripcion = new Forminscripcion();
+        ventanaInscripcion.setVisible(true);
+        escritorio.add(ventanaInscripcion);
+    }//GEN-LAST:event_MenuInscribirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,7 +169,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu MenuSalir;
     private javax.swing.JMenuItem MenuVistaAlumno;
     private javax.swing.JMenuItem MenuVistaMateria;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem6;
     // End of variables declaration//GEN-END:variables
